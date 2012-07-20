@@ -1,9 +1,9 @@
 %define upstream_name    HTTP-Cookies
-%define upstream_version 6.00
+%define upstream_version 6.01
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Release:    1
 
 Summary:    Storage of cookies
 License:    GPL+ or Artistic
@@ -15,7 +15,6 @@ BuildRequires: perl(HTTP::Date)
 BuildRequires: perl(HTTP::Headers::Util)
 BuildRequires: perl(Time::Local)
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This class is for objects that represent a "cookie jar" -- that is, a
@@ -37,6 +36,8 @@ _HTTP::Cookies_ object can be saved in and restored from files.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
+rm lib/HTTP/Cookies/Microsoft.pm
+sed -i -e '/Microsoft.pm/d' MANIFEST
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -58,5 +59,3 @@ rm -rf %buildroot
 %doc Changes META.yml README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
