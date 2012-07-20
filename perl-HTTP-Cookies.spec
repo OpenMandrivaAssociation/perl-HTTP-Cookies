@@ -14,6 +14,7 @@ Source0:    http://www.cpan.org/modules/by-module/HTTP/%{upstream_name}-%{upstre
 BuildRequires: perl(HTTP::Date)
 BuildRequires: perl(HTTP::Headers::Util)
 BuildRequires: perl(Time::Local)
+BuildRequires: perl-devel
 BuildArch: noarch
 
 %description
