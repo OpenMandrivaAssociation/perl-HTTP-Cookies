@@ -5,12 +5,12 @@
 %endif
 
 %define modname	HTTP-Cookies
-%define modver	6.01
+%define modver	6.04
 
 Summary:	Storage of cookies
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	14
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -56,7 +56,6 @@ sed -i -e '/Microsoft.pm/d' MANIFEST
 %makeinstall_std
 
 %files
-%doc Changes META.yml README
+%doc Changes META.yml
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
-
