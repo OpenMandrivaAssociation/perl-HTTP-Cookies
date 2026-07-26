@@ -5,16 +5,14 @@
 %endif
 
 %define modname	HTTP-Cookies
-%define modver	6.04
-
 Summary:	Storage of cookies
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	4
+Version:	6.04
+Release:	5
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/HTTP/%{modname}-%{modver}.tar.gz
+Url:		https://metacpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/HTTP/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl(Test::More)
@@ -43,7 +41,7 @@ to initialize Cookie-headers in _HTTP::Request_ objects. The state of a
 _HTTP::Cookies_ object can be saved in and restored from files.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%setup -qn %{modname}-%{version}
 rm lib/HTTP/Cookies/Microsoft.pm
 sed -i -e '/Microsoft.pm/d' MANIFEST
 
