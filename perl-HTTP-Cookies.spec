@@ -7,8 +7,8 @@
 %define modname	HTTP-Cookies
 Summary:	Storage of cookies
 Name:		perl-%{modname}
-Version:	6.04
-Release:	5
+Version:	6.12
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/%{modname}
@@ -41,7 +41,7 @@ to initialize Cookie-headers in _HTTP::Request_ objects. The state of a
 _HTTP::Cookies_ object can be saved in and restored from files.
 
 %prep
-%setup -qn %{modname}-%{version}
+%setup -qn %{modname}-%{version} -n HTTP-Cookies-6.12
 rm lib/HTTP/Cookies/Microsoft.pm
 sed -i -e '/Microsoft.pm/d' MANIFEST
 
